@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <style>
+      body {
+        margin: 0;
+        padding: 2px;
+      }
       .cloudimage-360 .cloudimage-360-prev, .cloudimage-360 .cloudimage-360-next {
         padding: 8px;
         background: rgb(244, 244, 244);
@@ -59,18 +63,15 @@
       @media screen {
           #my {
                 display: inline;
-                width: 80%;
+                width: 100%;
                 text-align: center;
-                height: 400px;
+                height: 100%;
             }
           }
       }
     </style>
   </head>
-
   <body>
-    <!-- simply iniatialize it with class name "cloudimage-360", server folder path, file name and amount of images -->
-    <p>1. Repeat images after last image</p>
    <div id="my">
         <div
       class="cloudimage-360"
@@ -84,7 +85,6 @@
       <button class="cloudimage-360-next"></button>
     </div>
    </div>
-    <!-- Add script tag with CDN link to js-cloudimage-360-view lib after all content in body tag -->
     <script src="cloud360.js"></script>
     <script src="https://cdn.scaleflex.it/filerobot/js-cloudimage-responsive/lazysizes.min.js?v4.1.6"></script>
   </body>
