@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>js-cloudimage-360-view</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <style>
+      body {
+        margin: 0;
+        padding: 2px;
+      }
+      .cloudimage-360 .cloudimage-360-prev, .cloudimage-360 .cloudimage-360-next {
+        padding: 8px;
+        background: rgb(244, 244, 244);
+        border: none;
+        border-radius: 4px;
+      }
+
+      .cloudimage-360 .cloudimage-360-prev:focus, .cloudimage-360 .cloudimage-360-next:focus {
+        outline: none;
+      }
+
+      .cloudimage-360 .cloudimage-360-prev {
+        display: none;
+        position: absolute;
+        z-index: 100;
+        top: calc(50% - 15px);
+        left: 20px;
+      }
+
+      .cloudimage-360 .cloudimage-360-next {
+        display: none;
+        position: absolute;
+        z-index: 100;
+        top: calc(50% - 15px);
+        right: 20px;
+      }
+
+      .cloudimage-360 .cloudimage-360-prev:before, .cloudimage-360 .cloudimage-360-next:before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: 50% 50% / cover no-repeat;
+      }
+
+      .cloudimage-360 .cloudimage-360-prev:before {
+        background-image: url('https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/assets/img/arrow-left.svg');
+      }
+
+      .cloudimage-360 .cloudimage-360-next:before {
+        background-image: url('https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/assets/img/arrow-right.svg');
+      }
+
+      .cloudimage-360 .cloudimage-360-prev.not-active, .cloudimage-360 .cloudimage-360-next.not-active {
+        opacity: 0.4;
+        cursor: default;
+      }
+      #my {
+        width: 400px;
+        height: 400px;
+      }
+      @media (max-width: 1055px) {
+          #my {
+                display: inline;
+                width: 313px;
+                text-align: center;
+                height: 359px;
+            }
+          }
+      }
+    </style>
+  </head>
+  <body>
+   <div id="my">
+        <div
+      class="cloudimage-360"
+      data-folder="img/lemon/"
+      data-filename="Q{index}.jpg"
+      data-amount="17"
+      data-lazyload
+    >
+      <button class="cloudimage-360-prev"></button>
+      <button class="cloudimage-360-next"></button>
+    </div>
+   </div>
+    <script src="cloud360.js"></script>
+    <script src="https://cdn.scaleflex.it/filerobot/js-cloudimage-responsive/lazysizes.min.js?v4.1.6"></script>
+  </body>
+</html>
