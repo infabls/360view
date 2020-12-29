@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>js-cloudimage-360-view</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <style>
+      .cloudimage-360 .cloudimage-360-prev, .cloudimage-360 .cloudimage-360-next {
+        padding: 8px;
+        background: rgb(244, 244, 244);
+        border: none;
+        border-radius: 4px;
+      }
+
+      .cloudimage-360 .cloudimage-360-prev:focus, .cloudimage-360 .cloudimage-360-next:focus {
+        outline: none;
+      }
+
+      .cloudimage-360 .cloudimage-360-prev {
+        display: none;
+        position: absolute;
+        z-index: 100;
+        top: calc(50% - 15px);
+        left: 20px;
+      }
+
+      .cloudimage-360 .cloudimage-360-next {
+        display: none;
+        position: absolute;
+        z-index: 100;
+        top: calc(50% - 15px);
+        right: 20px;
+      }
+
+      .cloudimage-360 .cloudimage-360-prev:before, .cloudimage-360 .cloudimage-360-next:before {
+        content: '';
+        display: block;
+        width: 30px;
+        height: 30px;
+        background: 50% 50% / cover no-repeat;
+      }
+
+      .cloudimage-360 .cloudimage-360-prev:before {
+        background-image: url('https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/assets/img/arrow-left.svg');
+      }
+
+      .cloudimage-360 .cloudimage-360-next:before {
+        background-image: url('https://cdn.scaleflex.it/plugins/js-cloudimage-360-view/assets/img/arrow-right.svg');
+      }
+
+      .cloudimage-360 .cloudimage-360-prev.not-active, .cloudimage-360 .cloudimage-360-next.not-active {
+        opacity: 0.4;
+        cursor: default;
+      }
+      #my {
+        width: 400px;
+        height: 400px;
+      }
+      @media screen {
+          #my {
+                display: inline;
+                width: 80%;
+                text-align: center;
+                height: 400px;
+            }
+          }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- simply iniatialize it with class name "cloudimage-360", server folder path, file name and amount of images -->
+    <p>1. Repeat images after last image</p>
+   <div id="my">
+        <div
+      class="cloudimage-360"
+      data-folder="actual/"
+      data-filename="K{index}.jpg"
+      data-amount="16"
+      data-magnifier="3"
+      data-lazyload
+    >
+      <button class="cloudimage-360-prev"></button>
+      <button class="cloudimage-360-next"></button>
+    </div>
+   </div>
+    <!-- Add script tag with CDN link to js-cloudimage-360-view lib after all content in body tag -->
+    <script src="cloud360.js"></script>
+    <script src="https://cdn.scaleflex.it/filerobot/js-cloudimage-responsive/lazysizes.min.js?v4.1.6"></script>
+  </body>
+</html>
