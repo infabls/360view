@@ -5,9 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <style>
+      html {
+        overflow: hidden;
+      }
       body {
         margin: 0;
         padding: 2px;
+      }
+      #my {
+        width: 400px;
+        height: 400px;
+      }
+      @media (max-width: 1055px) {
+          #my {
+                display: inline;
+                width: 313px;
+                text-align: center;
+                height: 359px;
+            }
+          }
       }
       .cloudimage-360 .cloudimage-360-prev, .cloudimage-360 .cloudimage-360-next {
         padding: 8px;
@@ -55,19 +71,6 @@
       .cloudimage-360 .cloudimage-360-prev.not-active, .cloudimage-360 .cloudimage-360-next.not-active {
         opacity: 0.4;
         cursor: default;
-      }
-      #my {
-        width: 400px;
-        height: 400px;
-      }
-      @media (max-width: 1055px) {
-          #my {
-                display: inline;
-                width: 313px;
-                text-align: center;
-                height: 359px;
-            }
-          }
       }
     </style>
   </head>
